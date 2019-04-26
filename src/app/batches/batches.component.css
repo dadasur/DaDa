@@ -1,0 +1,10 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+.container{
+   margin-top: -20px;
+    height:60em; 
+    background-size:cover; 
+    width:100%;
+    background-image:url('../../assets/magic.jpg');
+   
+  }

@@ -1,0 +1,80 @@
+<div class="container" *ngIf="showone">
+    <div class="login" >
+      <h2 class="login-header">Leave</h2>
+
+
+      <table  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+           
+          <!-- Position Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Start Date</th>
+            <td mat-cell *matCellDef="let element">{{UserName}}</td>
+          </ng-container>
+        
+          <!-- Name Column -->    
+          <ng-container matColumnDef="Numberofpages">
+            <th mat-header-cell *matHeaderCellDef>End Date</th>
+            <td mat-cell *matCellDef="let element">{{UserNamee}} </td>
+          </ng-container>
+        
+          <!-- Weight Column -->
+          <ng-container matColumnDef="prise">
+            <th mat-header-cell *matHeaderCellDef> Reason for Leave</th>
+            <td mat-cell *matCellDef="let element">{{UserNameee}}</td>
+          </ng-container>
+        
+         
+        
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+<p>
+
+  </p>
+        <button class="btn btn-primary" (click)="chekk()">Add Leave date </button>
+        <p>
+
+          </p>
+</div>
+</div>
+<div class="container" *ngIf="showtwo">
+    <div class="login" >
+        <div  *ngIf="showtwo">
+    
+           
+            <mat-form-field class="example-full-width">
+                <input  [(ngModel)]="UserName" matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <button mat-raised-button (click)="picker.open()" >start Date</button>   
+              <br>
+               
+          </div>
+       
+         <div  *ngIf="showtwo">
+      
+              <mat-form-field class="example-full-width">
+                  <input [(ngModel)]="UserNamee" matInput [matDatepicker]="picker" placeholder="Choose a date">
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <button mat-raised-button (click)="picker.open()" >End Date</button>
+                
+          </div>
+          <div  *ngIf="showtwo">  
+
+              <label> Your Leave Reasean
+                  <textarea [(ngModel)]="UserNameee"  cols="20" rows="15" class="form-control"></textarea>
+                </label>
+                <p>
+                  </p>
+                    <button class="btn btn-primary" (click)="chekkk()">Back</button> 
+          </div>
+        
+</div>
+
+</div>
