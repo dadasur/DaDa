@@ -9,13 +9,6 @@ export interface PeriodicElement {
   prise: number;
 }
 
-
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {name: 'c', Numberofpages: 10079, prise: 500}
- 
-];
-
 @Component({
   selector: 'app-leave',
   templateUrl: './leave.component.html',
@@ -25,12 +18,22 @@ export class LeaveComponent implements OnInit {
   public UserName="";
   public UserNamee="";
   public UserNameee="";
+ 
   showone=true;
   showtwo=false;
+   batches:string[] = new Array();
+   j=0;
+  
+    employees = {
+    accounting: []
+};
 
-  displayedColumns: string[] = ['name', 'Numberofpages', 'prise'];
-  dataSource = ELEMENT_DATA;
-  constructor() { }
+   
+  displayedColumns: string[] = ['firstName', 'lastName', 'age'];
+  dataSource = this.employees.accounting;
+  
+  constructor() {
+   }
 
   ngOnInit() {
   }
@@ -45,27 +48,34 @@ export class LeaveComponent implements OnInit {
   {
     var str=this.UserName.toString();
     console.log(str);
-  //  var str = "Apples are round, and apples are juicy."; 
+ 
     var splitted = str.split(" " ,4); 
-    var df=splitted[0]+splitted[1]+splitted[2]+splitted[3]+"to";
-//+splitted[1]+splitted[2];
-    console.log(df);
-    console.log(this.UserName);
+    var df=splitted[0]+splitted[1]+splitted[2]+splitted[3]+'-';
+
     this.UserName=df;
 
-
-    var str=this.UserNamee.toString();
+    var str=this.UserNamee.toString();  
     console.log(str);
-  //  var str = "Apples are round, and apples are juicy."; 
+  
     var splitted = str.split(" " ,4); 
-    var df=splitted[0]+splitted[1]+splitted[2]+splitted[3]+"-";
-//+splitted[1]+splitted[2];
+    var df=splitted[0]+splitted[1]+splitted[2]+splitted[3]+'-';
+
     console.log(df);
-    console.log(this.UserName);
+   
     this.UserNamee=df;
 
     this.showone=true;
     this.showtwo=false;
+   
+  this.employees.accounting.push({ 
+    "firstName" : this.UserName,
+    "lastName"  : this.UserNamee,
+    "age"       : this.UserNameee
+  });
+
+console.log(JSON.stringify(this.employees));
+console.log(this.dataSource);
   }
+       
 }
            

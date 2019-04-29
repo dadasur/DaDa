@@ -7,6 +7,9 @@
     width:100%;
     background-image:url('../../assets/magichome.jpg');   
   }
+  table {
+    width: 100%;
+  }
   mat-form-field {
     margin-right: 12px;
   }

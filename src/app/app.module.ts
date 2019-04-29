@@ -22,6 +22,7 @@ import {MatNativeDateModule} from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { NavComponent } from './nav/nav.component';
 import { LeaveComponent } from './leave/leave.component';
+import { LLeaveComponent } from './lleave/lleave.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { LeaveComponent } from './leave/leave.component';
     InvalidPageComponent,
     LoginComponent,
     NavComponent,
-    LeaveComponent
+    LeaveComponent,
+    LLeaveComponent
   ],
   imports: [
     BrowserModule,

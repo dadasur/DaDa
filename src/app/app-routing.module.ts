@@ -6,10 +6,12 @@ import { LoginComponent } from './login/login.component';
 import { InvalidPageComponent } from './invalid-page/invalid-page.component';
 import { SubjectsComponent } from './subjects/subjects.component';
 import { LeaveComponent } from './leave/leave.component';
+import { LLeaveComponent } from './lleave/lleave.component';
 import { AppComponent } from './app.component';
 
 //Array of Routes in application
 const routes: Routes = [
+  {path : 'lleave' ,component:LeaveComponent},
   {path : 'batches', component:BatchesComponent},
   {path : 'leave' ,component:LeaveComponent}, 
   
